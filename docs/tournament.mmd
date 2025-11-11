@@ -1,0 +1,49 @@
+sequenceDiagram
+    participant U as User
+    participant FE as Frontend
+    participant BE as Backend
+
+    %% ===== TOURNAMENT DRAFT CREATION =====
+    U->>FE: Clicks "Play Tournament" on Home Page
+    FE->>U: Prompt for number of players
+    U->>FE: Input 4 players
+    FE->>U: Prompt to enter details for each player
+
+    %% ===== PLAYER ENTRY LOOP (LOCAL DRAFT) =====
+    loop For each player slot
+        alt Registered user
+            FE->>U: Prompt for username & password
+            U->>FE: Provides login credentials
+            FE->>BE: POST /api/tournaments/validate-player { username, password }
+            BE->>FE: 200 { valid: true, userId, displayName }
+            FE->>FE: Store validated player info in draft list
+        else Guest user
+            FE->>U: Prompt for guest display name
+            U->>FE: Inputs guest name
+            FE->>FE: Store guest info in draft list
+        end
+    end
+
+    %% ===== FINALIZE TOURNAMENT =====
+    FE->>U: Show all entered players for review
+    U->>FE: Click "Finalize Tournament"
+    FE->>BE: POST /api/tournaments/finalize { numberOfPlayers, players[] }
+    BE->>FE: 201 Tournament created { id, status: "CREATED" }
+
+    %% ===== MATCH PROGRESSION =====
+    loop For each match
+        FE->>BE: GET /api/tournaments/next-match
+        BE->>FE: 200 { matchIndex, gameSessionId, players }
+        FE->>U: Show next match with “Ready” button
+        U->>FE: Click “Ready”
+        FE->>BE: PATCH /api/game-sessions/:id/status { status: "STARTED" }
+        BE->>FE: 200 Game started
+        U<<-->>FE: Gameplay
+        FE->>U: End of game, “Next” button
+    end
+
+    %% ===== FINAL RESULTS =====
+    FE->>BE: GET /api/tournaments/next-match
+    BE->>FE: 200 { nextMatch: null, status: "FINISHED", results }
+    FE->>U: Display Tournament Results (Winner, Bracket, Stats)
+    FE->>U: Show “Play Again” option

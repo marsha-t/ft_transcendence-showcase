@@ -83,3 +83,9 @@ graph TD
   class B, app;
   class C data;
   class F, infra;
+```
+
+---
+## 📘 Learn More
+For detailed breakdowns of key modules:
+- [Tournament Matching System](./docs/tournament.md)

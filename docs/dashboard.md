@@ -21,7 +21,5 @@ This module demonstrates:
 
 ---
 ## 🎥 Demo
-<video width="720" controls>
-  <source src="../media/user-dashboard.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[<video width="720" controls>](https://github.com/marsha-t/ft_transcendence-showcase/media/user-dashboard.mp4
+)

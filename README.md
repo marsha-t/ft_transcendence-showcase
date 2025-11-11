@@ -89,3 +89,5 @@ graph TD
 ## 📘 Learn More
 For detailed breakdowns of key modules:
 - [Tournament Matching System](./docs/tournament.md)
+- [User Dashboard](./docs/dashboard.md)
+

@@ -21,5 +21,27 @@ This module demonstrates:
 
 ---
 ## 🎥 Demo
-[<video width="720" controls>](https://github.com/marsha-t/ft_transcendence-showcase/media/user-dashboard.mp4
-)
+![Dashboard](../media/user-dashboard.gif) 
+
+---
+## 📊 Statistics and Charts
+### Performance Statistics
+
+| Metric | Description |
+|:-----------|:------------|
+| Total Matches | Number of games played by the user|
+| Total Wins | Count of matches won |
+| Win Rate (%) | Ratio of wins to total matches |
+| Average Score | Mean number of points scored per match |
+| Current Win Streak | Number of consecutive wins in progress |
+| Longest Win Streak | Highest consecutive win streak ever recorded |
+
+
+
+### Interactive Charts
+| Chart	| Description | 
+|:-----------|:------------|
+| Win Rate Over Time | Line chart plotting daily win rate (%) across all finished sessions | 
+| Score Distribution | Histogram of final game scores (0–5) |
+| Wins per Opponent | Bar chart comparing win rates against the five most-played opponents | 
+| Leaderboard | Table ranking users by a composite score based on win rate, total matches, and average score |

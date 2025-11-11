@@ -19,7 +19,7 @@ For a full step-by-step visualization of how the user, frontend and backend inte
 ## 🧩 Key Design Features
 
 ### 1. Flexible Player Support
-- Accepts both **registered users** and **guest players**
+- Accepts both registered users and guest players
 - Enforces unique display names within each tournament
 
 ### 2. Handling Non-Power-of-2 Players
@@ -34,28 +34,12 @@ For a full step-by-step visualization of how the user, frontend and backend inte
 
 --- 
 ## 📸 Screenshots
-<div align="center">
-
-  <table>
-    <tr>
-      <td><img src="../media/tournament-setup.png" width="450"/><br><b>1️⃣ Tournament Setup</b><br><sub>User defines number of players and begins setup.</sub></td>
-      <td><img src="../media/tournament-add-user.png" width="450"/><br><b>2️⃣ Add Registered Player</b><br><sub>Select existing users from the database.</sub></td>
-    </tr>
-    <tr>
-      <td><img src="../media/tournament-add-guest.png" width="450"/><br><b>3️⃣ Add Guest Player</b><br><sub>Join via guest alias for non-registered players.</sub></td>
-      <td><img src="../media/tournament-confirm.png" width="450"/><br><b>4️⃣ Confirm Draft</b><br><sub>Validate all participants before tournament start.</sub></td>
-    </tr>
-    <tr>
-      <td><img src="../media/tournament-match.png" width="450"/><br><b>5️⃣ Match In Progress</b><br><sub>Game session created and tracked by backend logic.</sub></td>
-      <td><img src="../media/tournament-game-results.png" width="450"/><br><b>6️⃣ Game Results</b><br><sub>Scores updated and next match seeded automatically.</sub></td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center">
-        <img src="../media/tournament-results.png" width="750"/><br>
-        <b>7️⃣ Final Results</b><br>
-        <sub>Displays full bracket, match outcomes, and winner statistics.</sub>
-      </td>
-    </tr>
-  </table>
-
-</div>
+| Screenshot | Description |
+|:-----------:|:------------|
+| ![Setup](../media/tournament-setup.png) | **1️⃣ Tournament Setup** — The user defines the number of players and initiates the draft creation process. |
+| ![Add User](../media/tournament-add-user.png) | **2️⃣ Add Registered Player** — Registered users can enter credentials to participate in the tournament. |
+| ![Add Guest](../media/tournament-add-guest.png) | **3️⃣ Add Guest Player** — Non-registered participants can join using a guest alias. |
+| ![Confirm](../media/tournament-confirm.png) | **4️⃣ Confirm Draft** — User can validate player list and confirm before the tournament starts. |
+| ![Match](../media/tournament-match.png) | **5️⃣ Match In Progress** — User can see the players in the next match as the game proceeds. |
+| ![Game Results](../media/tournament-game-results.png) | **6️⃣ Match Results** — After each match, dashboard visualizes game progress and lists player statistics. |
+| ![Results](../media/tournament-results.png) | **7️⃣ Final Tournament Results** — Displays the tournament bracket, round outcomes, and winner statistics. |

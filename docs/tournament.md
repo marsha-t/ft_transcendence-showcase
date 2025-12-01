@@ -27,6 +27,13 @@ For a full step-by-step visualization of how the user, frontend and backend inte
   - Unpaired players are advanced automatically.
   - Each “bye” is represented as a tournament match with only one player slot filled.
   - The backend creates the next-round tournament match once both parent winners exist.
+- This is implemented by 
+
+- When player count is not a power of two, the system auto-seeds byes into the first round:
+  - Unpaired players are advanced automatically.
+  - Each “bye” is represented as a tournament match with only one player slot filled.
+  - The backend creates the next-round tournament match once both parent winners exist.
+- This is implemented by representing the tournament as a complete binary tree and using recursion to propagate winners. More details are in [Tournament Matching Document](./tournament-matching.md)
 
 ### 3. REST-Based Real-Time Flow
 - The client polls or re-fetches state on key events: Match completion, Tournament start or finish
